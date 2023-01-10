@@ -107,6 +107,7 @@ img {
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: var(--white);
+  background-color: var(--accent-color);
 }
 
 /* -----Text----- */
@@ -178,20 +179,6 @@ img {
 
 .section-title-black {
   color: var(--black-title);
-}
-
-.hero-list-link {
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  letter-spacing: 0.2em;
-
-  color: var(--black-title);
-}
-
-.hero-list-link:hover,
-.hero-list-link:focus {
-  color: var(--accent-color);
 }
 
 /* -----Header----- */
@@ -293,6 +280,20 @@ img {
   width: 380px;
 }
 
+.hero-list-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+
+  color: var(--black-title);
+}
+
+.hero-list-link:hover,
+.hero-list-link:focus {
+  color: var(--accent-color);
+}
+
 /* -----About Us Section----- */
 
 .about-us-section {
@@ -376,19 +377,21 @@ img {
 .prices-list-item {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+  flex-shrink: 0;
 }
 
 .prices-list-item:not(:first-child) {
   margin-top: 20px;
 }
 
-.list-item-name {
-  display: flex;
+.prices-list-item > p {
+  flex-shrink: 0;
 }
 
-.list-item-name::after {
+.prices-list-item::before {
   content: '';
-  align-self: flex-end;
+
   margin-left: 6px;
   margin-right: 6px;
   height: 1px;
@@ -397,13 +400,68 @@ img {
   background-color: rgba(157, 164, 189, 0.12);
 }
 
+.prices-item-name {
+  order: -1;
+}
+
 .prices-btn {
   margin: 50px auto 0 auto;
 }
 
 /* -----Reasons Section----- */
 
+.reasons-section {
+  padding-top: 121px;
+  padding-bottom: 130px;
+}
+
+.reasons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reasons-list-container {
+  width: 570px;
+}
+
+.reasons-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0 auto;
+  width: 370px;
+}
+
+.reasons-list-item {
+  width: 170px;
+  height: 133px;
+  padding: 20px 24px;
+  background-color: #f7f7f7;
+
+  text-align: center;
+}
+
+.reasons-list-item:nth-child(odd) {
+  margin-right: 30px;
+}
+
+.reasons-list-item:nth-child(even) {
+  margin-top: 30px;
+}
+
+.reasons-text-container {
+  padding-left: 15px;
+  width: 50%;
+}
+
+.title-reasons,
+.reasons-text {
+  margin-top: 20px;
+}
+
 .reasons-numbers {
+  display: flex;
+  justify-content: center;
   font-weight: 700;
   font-size: 42px;
   line-height: 1.36;
@@ -411,11 +469,22 @@ img {
   color: var(--black);
 }
 
-.reasons-text {
+.reasons-numbers::after {
+  content: '+';
+
   font-weight: 600;
+  font-size: 16px;
+  line-height: 1.37;
+
+  color: var(--accent-color);
+}
+
+.reasons-list-text {
+  margin-top: 6px;
   font-size: 11px;
+  font-weight: 600;
   line-height: 1.36;
-  color: var(--black);
+  letter-spacing: 0em;
 }
 
 /* -----Employees Section----- */
